@@ -52,6 +52,11 @@ limitations under the License.
 ## Usage
 
 ```javascript
+import ulpdiff from 'https://cdn.jsdelivr.net/gh/stdlib-js/number-float64-base-ulp-difference@esm/index.mjs';
+```
+The previous example will load the latest bundled code from the esm branch. Alternatively, you may load a specific version by loading the file from one of the [tagged bundles](https://github.com/stdlib-js/number-float64-base-ulp-difference/tags). For example,
+
+```javascript
 import ulpdiff from 'https://cdn.jsdelivr.net/gh/stdlib-js/number-float64-base-ulp-difference@v0.1.0-esm/index.mjs';
 ```
 
@@ -114,7 +119,7 @@ d = ulpdiff( NaN, NaN );
 
 import EPS from 'https://cdn.jsdelivr.net/gh/stdlib-js/constants-float64-eps@esm/index.mjs';
 import SMALLEST_SUBNORMAL from 'https://cdn.jsdelivr.net/gh/stdlib-js/constants-float64-smallest-subnormal@esm/index.mjs';
-import ulpdiff from 'https://cdn.jsdelivr.net/gh/stdlib-js/number-float64-base-ulp-difference@v0.1.0-esm/index.mjs';
+import ulpdiff from 'https://cdn.jsdelivr.net/gh/stdlib-js/number-float64-base-ulp-difference@esm/index.mjs';
 
 var d = ulpdiff( 1.0, 1.0+EPS );
 console.log( d );
