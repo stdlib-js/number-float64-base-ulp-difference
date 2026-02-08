@@ -52,7 +52,7 @@ limitations under the License.
 ## Usage
 
 ```javascript
-import ulpdiff from 'https://cdn.jsdelivr.net/gh/stdlib-js/number-float64-base-ulp-difference@esm/index.mjs';
+import ulpdiff from 'https://cdn.jsdelivr.net/gh/stdlib-js/number-float64-base-ulp-difference@v0.1.1-esm/index.mjs';
 ```
 
 #### ulpdiff( x, y )
@@ -114,7 +114,7 @@ d = ulpdiff( NaN, NaN );
 
 import EPS from 'https://cdn.jsdelivr.net/gh/stdlib-js/constants-float64-eps@esm/index.mjs';
 import SMALLEST_SUBNORMAL from 'https://cdn.jsdelivr.net/gh/stdlib-js/constants-float64-smallest-subnormal@esm/index.mjs';
-import ulpdiff from 'https://cdn.jsdelivr.net/gh/stdlib-js/number-float64-base-ulp-difference@esm/index.mjs';
+import ulpdiff from 'https://cdn.jsdelivr.net/gh/stdlib-js/number-float64-base-ulp-difference@v0.1.1-esm/index.mjs';
 
 var d = ulpdiff( 1.0, 1.0+EPS );
 console.log( d );
