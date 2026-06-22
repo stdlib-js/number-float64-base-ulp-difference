@@ -85,7 +85,8 @@
     "numbers",
     "ulp",
     "float64",
-    "double"
+    "double",
+    "number"
   ],
   "funding": {
     "type": "opencollective",
