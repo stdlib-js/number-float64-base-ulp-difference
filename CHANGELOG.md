@@ -22,6 +22,7 @@
 
 <details>
 
+-   [`b74c268`](https://github.com/stdlib-js/stdlib/commit/b74c2687461fb1642089500b7cc8541d1100bfb4) - **docs:** fix return annotation [(#15074)](https://github.com/stdlib-js/stdlib/pull/15074) _(by Philipp Burckhardt)_
 -   [`b5e2b90`](https://github.com/stdlib-js/stdlib/commit/b5e2b904797ed4e217a24dfcff6cb2c8b5a3e578) - **feat:** add `C` implementation to `number/float64/base/ulp-difference` [(#15044)](https://github.com/stdlib-js/stdlib/pull/15044) _(by Muhammad Haris)_
 -   [`68d7a66`](https://github.com/stdlib-js/stdlib/commit/68d7a66061c44c019f8b4852ae2860ad8d96c708) - **chore:** update keywords and add missing section heading [(#13009)](https://github.com/stdlib-js/stdlib/pull/13009) _(by Philipp Burckhardt)_
 
