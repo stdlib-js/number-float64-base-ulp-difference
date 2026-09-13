@@ -45,32 +45,38 @@ limitations under the License.
 
 <!-- Package usage documentation. -->
 
-<section class="installation">
 
-## Installation
-
-```bash
-npm install @stdlib/number-float64-base-ulp-difference
-```
-
-Alternatively,
-
--   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
--   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
--   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
-
-The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
-
-To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
-
-</section>
 
 <section class="usage">
 
 ## Usage
 
+To use in Observable,
+
 ```javascript
-var ulpdiff = require( '@stdlib/number-float64-base-ulp-difference' );
+ulpdiff = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/number-float64-base-ulp-difference@umd/browser.js' )
+```
+
+To vendor stdlib functionality and avoid installing dependency trees for Node.js, you can use the UMD server build:
+
+```javascript
+var ulpdiff = require( 'path/to/vendor/umd/number-float64-base-ulp-difference/index.js' )
+```
+
+To include the bundle in a webpage,
+
+```html
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/number-float64-base-ulp-difference@umd/browser.js"></script>
+```
+
+If no recognized module system is present, access bundle contents via the global scope:
+
+```html
+<script type="text/javascript">
+(function () {
+    window.ulpdiff;
+})();
+</script>
 ```
 
 #### ulpdiff( x, y )
@@ -124,10 +130,15 @@ d = ulpdiff( NaN, NaN );
 
 <!-- eslint no-undef: "error" -->
 
-```javascript
-var EPS = require( '@stdlib/constants-float64-eps' );
-var SMALLEST_SUBNORMAL = require( '@stdlib/constants-float64-smallest-subnormal' );
-var ulpdiff = require( '@stdlib/number-float64-base-ulp-difference' );
+```html
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/constants-float64-eps@umd/browser.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/constants-float64-smallest-subnormal@umd/browser.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/number-float64-base-ulp-difference@umd/browser.js"></script>
+<script type="text/javascript">
+(function () {
 
 var d = ulpdiff( 1.0, 1.0+EPS );
 console.log( d );
@@ -148,6 +159,11 @@ console.log( d );
 d = ulpdiff( SMALLEST_SUBNORMAL, -SMALLEST_SUBNORMAL );
 console.log( d );
 // => 2.0
+
+})();
+</script>
+</body>
+</html>
 ```
 
 </section>
@@ -156,106 +172,7 @@ console.log( d );
 
 <!-- C interface documentation. -->
 
-* * *
 
-<section class="c">
-
-## C APIs
-
-<!-- Section to include introductory text. Make sure to keep an empty line after the intro `section` element and another before the `/section` close. -->
-
-<section class="intro">
-
-</section>
-
-<!-- /.intro -->
-
-<!-- C usage documentation. -->
-
-<section class="usage">
-
-### Usage
-
-```c
-#include "stdlib/number/float64/base/ulp_difference.h"
-```
-
-#### stdlib_base_float64_ulp_difference( x, y )
-
-Computes the number of representable [double-precision][double-precision] floating-point values that separate two [double-precision][double-precision] floating-point numbers along the real number line.
-
-```c
-#include "stdlib/constants/float64/eps.h"
-
-double d = stdlib_base_float64_ulp_difference( 1.0, 1.0 + STDLIB_CONSTANT_FLOAT64_EPS );
-// returns 1.0
-```
-
-The function accepts the following arguments:
-
--   **x**: `[in] double` first input value.
--   **y**: `[in] double` second input value.
-
-```c
-double stdlib_base_float64_ulp_difference( const double x, const double y );
-```
-
-</section>
-
-<!-- /.usage -->
-
-<!-- C API usage notes. Make sure to keep an empty line after the `section` element and another before the `/section` close. -->
-
-<section class="notes">
-
-</section>
-
-<!-- /.notes -->
-
-<!-- C API usage examples. -->
-
-<section class="examples">
-
-### Examples
-
-```c
-#include "stdlib/number/float64/base/ulp_difference.h"
-#include "stdlib/constants/float64/eps.h"
-#include "stdlib/constants/float64/smallest_subnormal.h"
-#include <stdio.h>
-
-int main( void ) {
-    const double x[] = {
-        1.0,
-        5.8364e-319,
-        0.0,
-        0.0,
-        STDLIB_CONSTANT_FLOAT64_SMALLEST_SUBNORMAL
-    };
-    const double y[] = {
-        1.0 + STDLIB_CONSTANT_FLOAT64_EPS,
-        5.8367e-319,
-        STDLIB_CONSTANT_FLOAT64_SMALLEST_SUBNORMAL,
-        -0.0,
-        -STDLIB_CONSTANT_FLOAT64_SMALLEST_SUBNORMAL
-    };
-
-    double d;
-    int i;
-    for ( i = 0; i < 5; i++ ) {
-        d = stdlib_base_float64_ulp_difference( x[ i ], y[ i ] );
-        printf( "ulpdiff(%lf, %lf) = %lf\n", x[ i ], y[ i ], d );
-    }
-}
-```
-
-</section>
-
-<!-- /.examples -->
-
-</section>
-
-<!-- /.c -->
 
 <!-- Section for related `stdlib` packages. Do not manually edit this section, as it is automatically populated. -->
 
